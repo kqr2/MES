@@ -9,3 +9,5 @@
  * ^-- RAM start      ^-- _end                             _estack, RAM end --^
  */
  ```
+
+Default memory layout starts with .data -> .bss -> heap (grows up) -> stack (grows down)
