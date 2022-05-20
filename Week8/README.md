@@ -42,7 +42,7 @@ int ex8(void) {
   ex8();
 ```
 
-### Printout from main.c
+### Default linker (STM32F429ZITX_FLASH.ld.org)
 
 ```
 Heap pointer: 0x20000938
@@ -60,3 +60,16 @@ In this example:
 - Stack pointer is located at end of memory / largest address
 - Static function var is basically located in .bss since it's initialized to 0 in this case
 - Function variable is located in stack which is also expected
+
+### Modified linker to swap .data and .bss (STM32F429ZITX_FLASH.ld.swap)
+
+```
+Heap pointer: 0x20000938
+Stack pointer: 0x20030000
+Unitialized global var pointer: 0x20000250
+Initialized global var pointer: 0x20000870
+static function var: 0x20000254
+function var: 0x2002ffb4
+```
+
+As you can see, the unitialized global var in .bss is now located before the initialized global var in .data
