@@ -190,7 +190,7 @@ The naive implementation is very simple to understand and maintain, however, it'
 
 Brian Kernighan's algorithm is more efficient since it always clears the least significant bit set.  If only the msb is set in a 32-bit word, it will loop only once.  The downside is that the algorithm is more difficult to understand and possibly maintain
 
-Finally lookup table is on average the most efficient as it always execute in constant time no matter the number of bits set.  The downside is that the lookup table consumes memory.  However, if this operation is done frequently it may be worth the tradeoff.
+Finally lookup table is on average the most efficient as it always execute in constant time no matter the number of bits set. There are no loops in the implementation. The downside is that the lookup table consumes memory.  However, if this operation is done frequently it may be worth the tradeoff.
 
 Overall: Choose lookup table if extra memory is available and constant performance is desired.  If memory is a premium, Brian Kernighan's algorithm is the next best choice.
 
